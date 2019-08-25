@@ -4,179 +4,160 @@ It receives calls from the "PayableServiceConfigurationRoutes" class and
 passes the calls down to the "PayableServiceConfigurationModel" class
 */
 
+const PayableServiceConfigurationModel = require("../../models/finance_and_fee_management/PayableServiceConfigurationModel.js");
 
+module.exports = class PayableServiceConfigurationController {
+  constructor() {}
 
-const PayableServiceConfigurationModel = require('../../models/finance_and_fee_management/PayableServiceConfigurationModel.js');
+  static insert(jsonObject_) {
+    return new Promise(function(resolve, reject) {
+      var myPromise = PayableServiceConfigurationModel.insert(jsonObject_);
 
+      myPromise.then(
+        function(result) {
+          resolve(result);
+        },
+        function(err) {
+          reject(err);
+        }
+      );
+    });
+  }
 
+  static get_all_records() {
+    return new Promise(function(resolve, reject) {
+      var myPromise = PayableServiceConfigurationModel.get_all_records();
 
+      myPromise.then(
+        function(result) {
+          resolve(result);
+        },
+        function(err) {
+          reject(err);
+        }
+      );
+    });
+  }
 
-module.exports = class PayableServiceConfigurationController{
-    constructor(){
+  static get_specific_records(ColumnName, value_) {
+    return new Promise(function(resolve, reject) {
+      var myPromise = PayableServiceConfigurationModel.get_specific_records(
+        ColumnName,
+        value_
+      );
 
-    }
-	
-	
-	
-   static insert(jsonObject_){
-	 return new Promise(function(resolve, reject) {  
-     
-     var myPromise = PayableServiceConfigurationModel.insert(jsonObject_);
-		  
-		   
-		   myPromise.then(function(result) {
-        
-           resolve(result);
-           }, function(err) {
-           reject(err);
-           })
-		 
-	 })
-	}		
+      myPromise.then(
+        function(result) {
+          resolve(result);
+        },
+        function(err) {
+          reject(err);
+        }
+      );
+    });
+  }
 
-	
-	
-	
-	
-   static get_all_records(){
-	   return new Promise(function(resolve, reject) {  
-        
-        var myPromise = PayableServiceConfigurationModel.get_all_records();
-		   
-		   
-		   myPromise.then(function(result) {
-        
-           resolve(result);
-           }, function(err) {
-           reject(err);
-           })
-		   
-	 })
-    }		
-	
-	
-	
-	
-	
-   static get_specific_records(ColumnName,value_){
-	   return new Promise(function(resolve, reject) {  
-        
-        var myPromise = PayableServiceConfigurationModel.get_specific_records(ColumnName,value_);
-		   
-		   
-		   myPromise.then(function(result) {
-        
-           resolve(result);
-           }, function(err) {
-           reject(err);
-           })
-	 })
-    }	
-			
-	
-	
-	
-   static batch_update(jsonObject_){
-	   return new Promise(function(resolve, reject) {  
-       
-        
-		var myPromise = PayableServiceConfigurationModel.batch_update(jsonObject_);
-		   
-		   
-		   myPromise.then(function(result) {
-        
-           resolve(result);
-           }, function(err) {
-           reject(err);
-           })
-		   
-	 })
-    }		
-	
-	
-	
-	
-	
-   static individual_record_update(ColumnName,value_,jsonObject_){
-	   return new Promise(function(resolve, reject) { 
-       
-        
-		var myPromise = PayableServiceConfigurationModel.individual_record_update(ColumnName,value_,jsonObject_);
-		   
-		   
-		   myPromise.then(function(result) {
-        
-           resolve(result);
-           }, function(err) {
-           reject(err);
-           })
-		   
-	 })
-    }		
-	
-	
-	
-	
-	
-   static delete_user_specic_record(ColumnName,value_,UserIdColumnName,UserId){
-	   return new Promise(function(resolve, reject) { 
-        
-        
-		var myPromise = PayableServiceConfigurationModel.delete_user_specic_record(ColumnName,value_,UserIdColumnName,UserId);
-		    
-		   
-		   myPromise.then(function(result) {
-        
-           resolve(result);
-           }, function(err) {
-           reject(err);
-           })
-		   
-	 })
-    }		
-	
-	
+  static batch_update(jsonObject_) {
+    return new Promise(function(resolve, reject) {
+      var myPromise = PayableServiceConfigurationModel.batch_update(
+        jsonObject_
+      );
 
-   static get_number_of_records(ColumnName,value_){
-	   return new Promise(function(resolve, reject) { 
-        
-        
-		var myPromise = PayableServiceConfigurationModel.get_number_of_records(ColumnName,value_);
-		    
-		   
-		   myPromise.then(function(result) {
-        
-           resolve(result);
-           }, function(err) {
-           reject(err);
-           })
-		   
-	 })
-    }	
-	
-	
-	
-	
-	
-	
-	static user_specific_select_query(ColumnName,value_,UserIdColumnName,UserId){
-	   return new Promise(function(resolve, reject) { 
-        
-        
-		var myPromise = PayableServiceConfigurationModel.user_specific_select_query(ColumnName,value_,UserIdColumnName,UserId);
-		    
-		   
-		   myPromise.then(function(result) {
-        
-           resolve(result);
-           }, function(err) {
-           reject(err);
-           })
-		   
-	 })
-    }	
-	
-	
-	
-	
-}
+      myPromise.then(
+        function(result) {
+          resolve(result);
+        },
+        function(err) {
+          reject(err);
+        }
+      );
+    });
+  }
+
+  static individual_record_update(ColumnName, value_, jsonObject_) {
+    return new Promise(function(resolve, reject) {
+      var myPromise = PayableServiceConfigurationModel.individual_record_update(
+        ColumnName,
+        value_,
+        jsonObject_
+      );
+
+      myPromise.then(
+        function(result) {
+          resolve(result);
+        },
+        function(err) {
+          reject(err);
+        }
+      );
+    });
+  }
+
+  static delete_user_specic_record(
+    ColumnName,
+    value_,
+    UserIdColumnName,
+    UserId
+  ) {
+    return new Promise(function(resolve, reject) {
+      var myPromise = PayableServiceConfigurationModel.delete_user_specic_record(
+        ColumnName,
+        value_,
+        UserIdColumnName,
+        UserId
+      );
+
+      myPromise.then(
+        function(result) {
+          resolve(result);
+        },
+        function(err) {
+          reject(err);
+        }
+      );
+    });
+  }
+
+  static get_number_of_records(ColumnName, value_) {
+    return new Promise(function(resolve, reject) {
+      var myPromise = PayableServiceConfigurationModel.get_number_of_records(
+        ColumnName,
+        value_
+      );
+
+      myPromise.then(
+        function(result) {
+          resolve(result);
+        },
+        function(err) {
+          reject(err);
+        }
+      );
+    });
+  }
+
+  static user_specific_select_query(
+    ColumnName,
+    value_,
+    UserIdColumnName,
+    UserId
+  ) {
+    return new Promise(function(resolve, reject) {
+      var myPromise = PayableServiceConfigurationModel.user_specific_select_query(
+        ColumnName,
+        value_,
+        UserIdColumnName,
+        UserId
+      );
+
+      myPromise.then(
+        function(result) {
+          resolve(result);
+        },
+        function(err) {
+          reject(err);
+        }
+      );
+    });
+  }
+};
